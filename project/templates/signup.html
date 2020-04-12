@@ -1,0 +1,27 @@
+<!-- templates/signup.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h3 class="title">Sign Up</h3>
+       
+        <form method="POST" action="/signup">
+            
+                <h3 class="subtitle">
+                    <input class="input is-large" type="email" name="email" placeholder="Email" >
+               </h3>
+           
+
+            	<h3 class="subtitle">
+                    <input class="input is-large" type="text" name="name" placeholder="Name" >
+              </h3>
+           
+<h3 class="subtitle">
+                    <input class="input is-large" type="password" name="password" placeholder="Password">
+            </h3>
+
+            <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+        </form>
+    
+
+{% endblock %}

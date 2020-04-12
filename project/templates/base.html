@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>S.E.T.A</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{{ url_for('main.index') }}" class="logo">Home</a>
+					<nav id="nav">
+						
+						<a href="{{ url_for('main.index') }}">Home</a>
+						{% if current_user.is_authenticated %}
+						<a href="{{ url_for('main.profile') }}">Profile</a>
+						<a href="{{url_for('main.map') }}">Map</a>
+						{% endif %}
+						{% if not current_user.is_authenticated %}
+						<a href="{{ url_for('auth.login') }}">Login</a>
+						<a href="{{ url_for('auth.signup') }}">Signup</a>
+						{% endif %}
+						{% if current_user.is_authenticated %}
+						<a href="{{ url_for('auth.logout') }}">Logout</a>
+						{% endif %}
+						
+						
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h1>Welcome to Bike Tracking Website</h1>
+				<p>Damn-Universal-Positive-Analyzer.</p>
+			</section>
+
+		<!-- One -->
+			
+
+		<!-- Two -->
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+					{% block content %}
+               				{% endblock %}
+					</header>
+					
+				</div>
+			</section>
+
+		<!-- Three -->
+			
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; HONEYBADGER</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="http://www.google.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="http://www.google.com" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="http://www.google.com" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="http://www.google.com" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="http://www.google.com" class="icon fa-youtube"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
